@@ -111,4 +111,15 @@ func main() {
 	fmt.Println("3000, B", salario(3721, "B"))
 	fmt.Println("3000, C", salario(3721, "C"))
 
+	minimum, _ := operation("minimum")
+	_, err := operation("fail")
+
+	println(minimum(2, 3, 5, 1, 2, 1))
+	println(err.Error())
+
+	dog, _ := animal("dog")
+	_, erred := animal("giraffe")
+
+	println(dog(4))
+	println(erred.Error())
 }
