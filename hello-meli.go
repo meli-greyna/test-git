@@ -1,15 +1,23 @@
 package main
 
-import (
-	"fmt"
-	"os"
-	"strconv"
-)
+import "fmt"
+
+var employees = map[string]int{"Benjamin": 20, "Nahuel": 26, "Brenda": 19, "Darío": 44, "Pedro": 30}
 
 func main() {
-	var pressure, _ = strconv.ParseFloat(os.Args[1], 64)
-	var humidity, _ = strconv.ParseFloat(os.Args[2], 64)
-	var temperature, _ = strconv.ParseFloat(os.Args[3], 64)
+	fmt.Println(employees["Benjamin"])
 
-	fmt.Println(pressure, humidity, temperature)
+	over21 := 0
+
+	for _, value := range employees {
+		if value >= 21 {
+			over21++
+		}
+	}
+
+	employees["Federico"] = 25
+
+	delete(employees, "Pedro")
+
+	fmt.Println(employees)
 }
